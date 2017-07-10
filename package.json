@@ -1,0 +1,33 @@
+{
+  "name": "react-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Benoît Delaunay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benoitdelaunay/react-workshop/issues"
+  },
+  "homepage": "https://github.com/benoitdelaunay/react-workshop#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm i -g webpack",
+    "build": "webpack --progress --colors",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benoitdelaunay/react-workshop.git"
+  },
+  "devDependencies": {
+    "@types/react": "^15.0.35",
+    "@types/react-dom": "^15.5.1",
+    "awesome-typescript-loader": "^3.2.1",
+    "eslint-loader": "^1.9.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.4.1",
+    "webpack": "^3.1.0"
+  }
+}
