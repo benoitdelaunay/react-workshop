@@ -4,4 +4,5 @@
 ```console
 npm install -g webpack yarn
 yarn install
+yarn run watch
 ```
