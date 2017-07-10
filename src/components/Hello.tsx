@@ -5,6 +5,6 @@ export interface HelloState {}
 
 export class Hello extends React.Component<HelloProps, HelloState> {
     render() {
-        return <h1>Hello world!</h1>;
+        return (<h1>Hello world!</h1>);
     }
 }
