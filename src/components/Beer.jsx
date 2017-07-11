@@ -20,6 +20,41 @@ var Beer = React.createClass({
     },
 
     /**
+     * Initiale state
+     * @returns {{cart: number}}
+     */
+    getInitialState: function() {
+        return {
+            amountQuantity: this.props.quantity,
+            cart: 0,
+        }
+    },
+
+    _addInCart: function() {
+        this.setState({
+            amountQuantity: this.state.amountQuantity-1,
+            cart: this.state.cart+1
+        })
+    },
+
+    /**
+     * Affichage du bouton d'ajout
+     * @returns {*}
+     * @private
+     */
+    _renderBtnAdd: function() {
+        var render = null;
+
+        if (this.state.amountQuantity > 0) {
+            render = (
+                <button onClick={this._addInCart}>Add in cart</button>
+            );
+        }
+
+        return render;
+    },
+
+    /**
      * Render
      * @returns {XML}
      */
@@ -27,7 +62,9 @@ var Beer = React.createClass({
         return (
             <div>
                 <h2>{this.props.name}</h2>
-                <div>quantity: {this.props.quantity}</div>
+                <div>quantity: {this.state.amountQuantity}</div>
+                <div>cart: {this.state.cart}</div>
+                {this._renderBtnAdd()}
             </div>
         )
     }

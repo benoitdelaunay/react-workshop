@@ -9,10 +9,10 @@ var Beers = React.createClass({
     propTypes: {
         // liste des bières
         // beers: React.PropTypes.any.isRequired,
-        beers: React.PropTypes.shape({
+        beers: React.PropTypes.arrayOf(React.PropTypes.shape({
             name: React.PropTypes.string.isRequired,
             quantity: React.PropTypes.number
-        }).isRequired,
+        })).isRequired,
     },
 
     /**
