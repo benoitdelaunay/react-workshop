@@ -1,5 +1,5 @@
 const path = require("path"),
-    webpack = require("webpack");
+      webpack = require("webpack");
 
 // permet de savoir si l'on est en mode production
 let production = process.argv.indexOf("--prod") > -1;
@@ -11,7 +11,7 @@ module.exports = {
         // nom de la clé [name]: liste des fichiers
         index: [
             // files
-            './src/index.tsx',
+            './src/index.jsx',
         ],
     },
 
@@ -46,15 +46,15 @@ module.exports = {
     module: {
         // définition des règles
         rules: [
-            // typescript (ts + tsx)
+            // typescript (js + jsx)
             {
-                // on prend tous les fichiers ts et tsx
-                test: /\.tsx?$/,
+                // on prend tous les fichiers js et jsx
+                test: /\.jsx?$/,
                 // on exclu le répertoire node_modules
                 exclude: /node_modules/,
 
                 // loader faisant la liaison entre typescript et webpack
-                loader: 'awesome-typescript-loader',
+                loader: 'babel-loader',
 
                 // on rajoute les presets qui vont bien
                 query: {
