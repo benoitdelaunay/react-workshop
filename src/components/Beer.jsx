@@ -5,9 +5,10 @@ var Beer = React.createClass({
      * PropTypes
      */
     propTypes: {
-        // liste des bières
+        id: React.PropTypes.number.isRequired,
         name: React.PropTypes.string.isRequired,
         quantity: React.PropTypes.number,
+        onAddInCart: React.PropTypes.func.isRequired,
     },
 
     /**
@@ -31,10 +32,12 @@ var Beer = React.createClass({
     },
 
     _addInCart: function() {
+        this.props.onAddInCart(this.props.id);
+
         this.setState({
             amountQuantity: this.state.amountQuantity-1,
             cart: this.state.cart+1
-        })
+        });
     },
 
     /**
